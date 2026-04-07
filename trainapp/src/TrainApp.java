@@ -6,34 +6,39 @@ public class TrainApp {
 
         // Header
         System.out.println("==================================");
-        System.out.println("UC3 - Track Unique Bogie IDs");
+        System.out.println("UC4 - Maintain Ordered Bogie Consist");
         System.out.println("==================================\n");
 
-        // Create Set to store unique bogie IDs
-        Set<String> bogies = new HashSet<>();
+        // Create LinkedList
+        List<String> trainConsist = new LinkedList<>();
 
-        // Add IDs (including duplicates)
-        bogies.add("BG101");
-        bogies.add("BG102");
-        bogies.add("BG103");
-        bogies.add("BG104");
+        // Add bogies in sequence
+        trainConsist.add("Engine");
+        trainConsist.add("Sleeper");
+        trainConsist.add("AC Coach");
 
-        // Duplicate entries (will be ignored)
-        bogies.add("BG101");
-        bogies.add("BG102");
+        // Insert bogie at specific position
+        trainConsist.add(2, "Pantry"); // insert at index 2
 
-        // Display all bogies
-        System.out.println("Unique Bogie IDs:");
-        System.out.println(bogies + "\n");
+        // Display after insertion
+        System.out.println("After Adding & Inserting Bogies:");
+        System.out.println(trainConsist + "\n");
 
-        // Display count
-        System.out.println("Total Unique Bogies: " + bogies.size() + "\n");
+        // Remove from front
+        trainConsist.remove(0);
 
-        // Check existence
-        System.out.println("Checking if 'BG101' exists:");
-        System.out.println("Contains BG101?: " + bogies.contains("BG101") + "\n");
+        // Remove from rear
+        trainConsist.remove(trainConsist.size() - 1);
+
+        // Display after removals
+        System.out.println("After Removing Front & Rear Bogies:");
+        System.out.println(trainConsist + "\n");
+
+        // Final structure
+        System.out.println("Final Train Consist:");
+        System.out.println(trainConsist + "\n");
 
         // Completion message
-        System.out.println("UC3 operations completed successfully...");
+        System.out.println("UC4 operations completed successfully...");
     }
 }
