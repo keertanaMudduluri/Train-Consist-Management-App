@@ -6,38 +6,34 @@ public class TrainApp {
 
         // Header
         System.out.println("==================================");
-        System.out.println("UC2 - Add Passenger Bogies to Train");
+        System.out.println("UC3 - Track Unique Bogie IDs");
         System.out.println("==================================\n");
 
-        // Create ArrayList
-        List<String> passengerBogies = new ArrayList<>();
+        // Create Set to store unique bogie IDs
+        Set<String> bogies = new HashSet<>();
 
-        // Add bogies
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        // Add IDs (including duplicates)
+        bogies.add("BG101");
+        bogies.add("BG102");
+        bogies.add("BG103");
+        bogies.add("BG104");
 
-        // Display after adding
-        System.out.println("After Adding Bogies:");
-        System.out.println("Passenger Bogies: " + passengerBogies + "\n");
+        // Duplicate entries (will be ignored)
+        bogies.add("BG101");
+        bogies.add("BG102");
 
-        // Remove a bogie
-        passengerBogies.remove("AC Chair");
+        // Display all bogies
+        System.out.println("Unique Bogie IDs:");
+        System.out.println(bogies + "\n");
 
-        // Display after removing
-        System.out.println("After Removing 'AC Chair':");
-        System.out.println("Passenger Bogies: " + passengerBogies + "\n");
+        // Display count
+        System.out.println("Total Unique Bogies: " + bogies.size() + "\n");
 
         // Check existence
-        System.out.println("Checking if 'Sleeper' exists:");
-        boolean exists = passengerBogies.contains("Sleeper");
-        System.out.println("Contains Sleeper?: " + exists + "\n");
-
-        // Final list
-        System.out.println("Final Train Passenger Consist:");
-        System.out.println(passengerBogies + "\n");
+        System.out.println("Checking if 'BG101' exists:");
+        System.out.println("Contains BG101?: " + bogies.contains("BG101") + "\n");
 
         // Completion message
-        System.out.println("UC2 operations completed successfully...");
+        System.out.println("UC3 operations completed successfully...");
     }
 }
